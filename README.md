@@ -2,7 +2,7 @@
 
 with Objectify ORM to access Firestore
 
-###setup
+### setup
 ~~~
 gcloud auth application-default set-quota-project project-id
 gcloud config set project project-id
@@ -10,14 +10,14 @@ gcloud app regions list
 gcloud app create --project=project-id --region=europe-west
 ~~~
 
-###services to enable
+### services to enable
 ~~~
 gcloud services list
 gcloud services enable servicemanagement.googleapis.com
 gcloud services enable servicecontrol.googleapis.com
 ~~~
 
-###build and deploy
+### build and deploy
 ~~~
 mvn clean package
 mvn endpoints-framework:openApiDocs
@@ -26,7 +26,7 @@ gcloud endpoints services deploy target/openapi-docs/openapi.json
 mvn appengine:deploy
 ~~~
 
-###run locally
+### run locally
 ~~~
 gcloud auth application-default login
 export ENDPOINTS_SERVICE_NAME=project-id.appspot.com
